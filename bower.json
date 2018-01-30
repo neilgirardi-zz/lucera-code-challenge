@@ -1,0 +1,33 @@
+{
+  "name": "Data-Test",
+  "description": "Built with theStack!",
+  "version": "0.0.1",
+  "homepage": "https://github.com/someuser/Data-Test",
+  "author": {
+    "name": "A Person",
+    "url": "https://github.com/someuser"
+  },
+  "main": "server/server.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/js/libs",
+    "*.sublime-project",
+    "*sublime-workspace"
+  ],
+  "devDependencies": {
+    "almond": "latest",
+    "jasmine": "latest",
+    "rjs": "latest",
+    "jasmine-jquery": "latest"
+  },
+  "dependencies": {
+    "backbone": "latest",
+    "lodash": "latest",
+    "jquery": "latest",
+    "requirejs": "latest",
+    "text": "latest",
+    "bootstrap": "latest",
+    "font-awesome": "latest"
+  }
+}

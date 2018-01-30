@@ -1,0 +1,70 @@
+<%
+    let {pagination, pageCount, pageNumber} = data[0].attributes;
+        print(`<nav id="pagination-navbar" class="collapse navbar-collapse">
+                <ul class="pagination">
+                    <li class="mobile-hidden">
+                        <span class="pagination-label">Pages: </span>
+                    </li>`)
+        if (! pagination) {
+            print(`<li class="mobile-hidden active">`)
+        } else {
+            print( `<li class="mobile-hidden">`);
+        }
+        print(`<a href="javascript:void(0)" data-page-number="all">View All</a>
+                    </li>
+                    <li class="disabled mobile-hidden">
+                      <span>
+                        <span aria-hidden="true">&laquo;</span>
+                      </span>
+                    </li>`);
+        for ( let i = 1; i <= pageCount; i++ ) {
+            if ( i == pageNumber ) {
+                print(`
+                    <li class="active">
+                        <span><span class="desktop-hidden">Page </span>${i} <span class="sr-only">(current)</span></span>
+                    </li>
+                    `);
+            } else {
+                print(`
+                    <li>
+                        <a href="javascript:void(0)" data-page-number="${i}"><span class="desktop-hidden">Page </span> ${i}</a>
+                    </li>
+                `);
+            }
+        }
+        print(`
+                    <li class="disabled mobile-hidden">
+                      <span>
+                        <span aria-hidden="true">&raquo;</span>
+                      </span>
+                    </li>
+                </ul>
+            </nav>
+        `)
+%>
+<div class="table-responsive panel panel-default">
+    <table class="table table-striped table-bordered table-rounded">
+        <thead>
+            <tr>
+                <th>Latency</th>
+                <th>Liquidity Provider</th>
+                <th>Client</th>
+                <th>Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+            data.forEach( row => {
+                print(
+                `<tr>
+                    <td>${row.attributes.latency}</td>
+                    <td>${row.attributes.LiquidityProvider}</td>
+                    <td>${row.attributes.Client}</td>
+                    <td>${row.attributes.volume}</td>
+                </tr>`
+                )
+            } )
+        %>
+        </tbody>
+    </table>
+</div>

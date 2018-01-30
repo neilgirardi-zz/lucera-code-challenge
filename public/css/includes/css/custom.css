@@ -1,0 +1,46 @@
+.navbar-main {
+  background-color: #4c94de;
+}
+.main-content {
+  margin-top: 110px;
+}
+.navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*.navbar-collapse.in {
+  padding-left: 15px;
+  padding-right: 15px;
+}*/
+.desktop-hidden {
+  display: none;
+}
+.pagination-label {
+  font-weight: bold;
+}
+th {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  ul.pagination {
+    display: table;
+    width: 100%;
+  }
+  ul.pagination .mobile-hidden {
+    display: none;
+  }
+  ul.pagination .desktop-hidden {
+    display: inline;
+  }
+  ul.pagination li {
+    display: table-row;
+  }
+  ul.pagination li.active > span {
+    display: block;
+    width: 100%;
+  }
+  ul.pagination li a {
+    display: block;
+    width: 100%;
+  }
+}
